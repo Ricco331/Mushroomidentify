@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Reishi - Marvelous Mushrooms</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .mushroom-image {
+            width: 400px;
+            height: auto;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: block;
+        }
+        .id-guide {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .id-guide img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 12px;
+            width: 400px;
+        }
+
+        /* Burger menu - fixed and dark brown */
+        .burger-menu {
+            position: fixed; /* stays visible when scrolling */
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .burger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .burger-icon span {
+            display: block;
+            height: 4px;
+            background: #5C3A21; /* dark brown to match headings */
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .burger-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #5C3A21; /* dark brown */
+            border-radius: 12px;
+            box-shadow: 0px 6px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+            width: 220px;
+        }
+        .burger-dropdown a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff; /* white text on dark brown */
+            font-size: 16px;
+        }
+        .burger-dropdown a:hover {
+            background: #7B4F32; /* lighter brown on hover */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="burger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="burger-dropdown" id="burgerDropdown">
+            <a href="index.html">Home</a>
+            <a href="oyster.html">Oyster</a>
+            <a href="reishi.html">Reishi</a>
+            <a href="chicken.html">Chicken of the Woods</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="inner">
+
+            <article class="box post">
+                <header>
+                    <h2>Reishi Mushroom</h2>
+                    <p>The Mushroom of Immortality</p>
+                </header>
+                <img src="images/reishi.jpg" alt="Reishi Mushroom" class="mushroom-image" />
+                <p>
+                    Reishi mushrooms (<em>Ganoderma lucidum</em>) have been treasured in traditional medicine for thousands of years, especially in East Asia where they are known as the “Mushroom of Immortality.”
+                    This striking fungus is believed to support immune health, reduce stress, and promote longevity.
+                </p>
+                <p>
+                    Reishi grows primarily on hardwood trees and is renowned for its glossy, varnish-like surface and rich red-brown coloration.
+                    Unlike many edible mushrooms, it has a tough, woody texture and is typically consumed in the form of teas, tinctures, or powdered extracts rather than eaten fresh.
+                </p>
+                <p>
+                    Beyond its medicinal uses, Reishi plays an important ecological role in decomposing dead wood and recycling nutrients, helping sustain healthy forest ecosystems.
+                </p>
+            </article>
+
+            <!-- Identification Guide -->
+            <section class="id-guide">
+                <h2>Identification Guide</h2>
+                <img src="images/reishi2.jpg" alt="Reishi Mushroom Identification">
+                <p>
+                    <strong>Reishi</strong> (<em>Ganoderma lucidum</em> and related species) 
+                    is a distinctive polypore fungus recognized for its varnished, lacquer-like surface 
+                    that shines in shades of deep red, orange, and brown.  
+                    The kidney-shaped cap often features concentric growth rings, giving it a striking, layered appearance.
+                </p>
+                <p>
+                    Instead of gills, Reishi has a white pore surface underneath that gradually turns yellow or brown with age.
+                    The pores are tiny and release brown spores.  
+                    Reishi typically grows at the base of hardwood trees like oak and maple, often on stumps or logs, 
+                    but can also be found on conifers depending on the species.
+                </p>
+                <p>
+                    This mushroom is tough and woody, making it inedible in the traditional sense, but highly valued for 
+                    medicinal teas, tinctures, and extracts.  
+                    When identifying Reishi, look for its varnished surface, lack of gills, and tough texture.  
+                    Avoid confusing it with other <em>Ganoderma</em> species that may lack the signature shine or differ in color.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // Burger toggle
+        function toggleMenu() {
+            const dropdown = document.getElementById('burgerDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close dropdown if clicking outside
+        document.addEventListener("click", function(e) {
+            const dropdown = document.getElementById('burgerDropdown');
+            const burger = document.querySelector('.burger-menu');
+            if (!burger.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

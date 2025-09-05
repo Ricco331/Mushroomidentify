@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Oyster - Marvelous Mushrooms</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .mushroom-image {
+            width: 400px;
+            height: auto;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: block;
+        }
+        .id-guide {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .id-guide img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 12px;
+            width: 400px;
+        }
+
+        /* Burger menu - fixed and dark brown */
+        .burger-menu {
+            position: fixed; /* stays visible when scrolling */
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .burger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .burger-icon span {
+            display: block;
+            height: 4px;
+            background: #5C3A21; /* dark brown to match headings */
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .burger-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #5C3A21; /* dark brown */
+            border-radius: 12px;
+            box-shadow: 0px 6px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+            width: 220px;
+        }
+        .burger-dropdown a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff; /* white text on dark brown */
+            font-size: 16px;
+        }
+        .burger-dropdown a:hover {
+            background: #7B4F32; /* lighter brown on hover */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="burger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="burger-dropdown" id="burgerDropdown">
+            <a href="index.html">Home</a>
+            <a href="oyster.html">Oyster</a>
+            <a href="reishi.html">Reishi</a>
+            <a href="chicken.html">Chicken of the Woods</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="inner">
+
+            <article class="box post">
+                <header>
+                    <h2>Oyster Mushroom</h2>
+                    <p>The Delicate Shell of the Forest</p>
+                </header>
+                <img src="images/oyster.jpg" alt="Oyster Mushroom" class="mushroom-image" />
+                <p>
+                    Oyster mushrooms (<em>Pleurotus ostreatus</em>) are among the most widely cultivated and consumed edible fungi in the world.
+                    Known for their delicate texture and subtle flavor, they are a favorite for both beginner and expert cooks.  
+                    They grow in overlapping clusters on dead or dying trees, playing an important role in decomposing wood and recycling nutrients back into the forest ecosystem.
+                </p>
+                <p>
+                    These mushrooms have a mild, slightly sweet flavor that pairs well with a variety of dishes.
+                    They are often sautéed, stir-fried, grilled, or added to soups and stews.
+                    Their quick cooking time and ability to absorb seasonings make them versatile and easy to prepare.
+                </p>
+                <p>
+                    Beyond their culinary uses, oyster mushrooms are also valued for their potential health benefits, including immune system support and cholesterol-lowering properties.
+                    They are a popular choice for both foragers and cultivators due to their ease of identification and growth.
+                </p>
+            </article>
+
+            <!-- Identification Guide -->
+            <section class="id-guide">
+                <h2>Identification Guide</h2>
+                <img src="images/oyster2.jpg" alt="Oyster Mushroom Identification">
+                <p>
+                    <strong>Oyster mushrooms</strong> (<em>Pleurotus ostreatus</em> and related species) 
+                    are known for their delicate, shell-like shape that resembles an oyster. 
+                    They typically grow in overlapping clusters on dead or dying hardwood trees such as beech, poplar, and willow.
+                    The caps range from white and cream to light gray or tan, and can sometimes display subtle pastel hues.
+                </p>
+                <p>
+                    Caps are smooth and often slightly wavy, with gills running down the short or absent stem 
+                    (a feature called <em>decurrent gills</em>). The gills are usually white or pale cream, 
+                    becoming slightly yellowish with age. Oyster mushrooms produce a white to lilac-gray spore print.  
+                    They are most common during cool, damp seasons, often appearing in late autumn or early winter, 
+                    though they can also fruit in spring.
+                </p>
+                <p>
+                    For safe identification, ensure the mushroom has no ring on the stem, no volva at the base, 
+                    and that the gills run down toward the wood it’s growing from. Avoid look-alikes such as 
+                    <em>Omphalotus</em> species (Jack-o’-lantern mushrooms), which are poisonous and have orange coloring.  
+                    Harvest young, firm caps for the best flavor and texture, and cook thoroughly before eating.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // Burger toggle
+        function toggleMenu() {
+            const dropdown = document.getElementById('burgerDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close dropdown if clicking outside
+        document.addEventListener("click", function(e) {
+            const dropdown = document.getElementById('burgerDropdown');
+            const burger = document.querySelector('.burger-menu');
+            if (!burger.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
+

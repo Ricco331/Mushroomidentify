@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+body {
+    background-color: #f5f1e8; /* warm beige */
+    color: #3e342c; /* deep earthy brown */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+    color: #5c4433; /* rich brown */
+}
+
+/* Links */
+a {
+    color: #8b5e3c; /* mushroom brown */
+    text-decoration: none;
+}
+a:hover {
+    color: #a7744a; /* lighter warm brown */
+}
+
+/* Sidebar */
+#sidebar {
+    background-color: #e9dfd1; /* pale tan */
+    padding: 2rem;
+}
+#sidebar h1#logo a {
+    color: #5c4433;
+    font-weight: bold;
+}
+
+/* Navigation Menu */
+#nav ul {
+    list-style: none;
+    padding: 0;
+}
+#nav ul li {
+    margin-bottom: 0.5rem;
+}
+#nav ul li a {
+    background-color: #c8a97e; /* warm mushroom tan */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: block;
+}
+#nav ul li a:hover, 
+#nav ul li.current a {
+    background-color: #a7744a; /* darker brown */
+}
+
+/* Main Content Area */
+#content .inner {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Featured Images */
+.image.featured img {
+    border-radius: 10px;
+    border: 3px solid #d8c2a7;
+}
+
+/* Articles */
+article.box.post {
+    margin-bottom: 2rem;
+    background-color: #fff8f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2d3c1;
+}
+article.box.post h2 a {
+    color: #5c4433;
+}
+article.box.post h2 a:hover {
+    color: #a7744a;
+}
+
+/* Buttons */
+.button {
+    background-color: #8b5e3c;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+}
+.button:hover {
+    background-color: #a7744a;
+}
+
+/* Pagination */
+.pagination .pages a {
+    background-color: #e9dfd1;
+    color: #5c4433;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.2rem;
+    border-radius: 4px;
+}
+.pagination .pages a.active {
+    background-color: #a7744a;
+    color: white;
+}
+
+/* Footer */
+#copyright {
+    color: #7a6c5c;
+}

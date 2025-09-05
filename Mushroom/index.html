@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Marvelous Mushrooms</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* Mushroom images */
+        .mushroom-card {
+            width: 300px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Mushroom titles */
+        .mushroom-title {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Container for images + layout */
+        .mushroom-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .mushroom-flex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .mushroom-flex .image {
+            flex: 0 0 400px;
+        }
+
+        .mushroom-flex img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .mushroom-info {
+            flex: 1;
+        }
+
+        /* Banner image */
+        .banner-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        /* Burger menu - fixed and dark brown */
+        .burger-menu {
+            position: fixed; /* stays visible while scrolling */
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .burger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px; 
+            height: 25px;
+            cursor: pointer;
+        }
+        .burger-icon span {
+            display: block;
+            height: 4px;
+            background: #5C3A21; /* dark brown like mushroom headings */
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .burger-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #5C3A21; /* dark brown */
+            border-radius: 12px;
+            box-shadow: 0px 6px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+            width: 220px;
+        }
+        .burger-dropdown a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff; /* white text on dark brown */
+            font-size: 16px;
+        }
+        .burger-dropdown a:hover {
+            background: #7B4F32; /* slightly lighter brown on hover */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="burger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="burger-dropdown" id="burgerDropdown">
+            <a href="index.html">Home</a>
+            <a href="oyster.html">Oyster</a>
+            <a href="reishi.html">Reishi</a>
+            <a href="chicken.html">Chicken of the Woods</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="inner">
+
+            <article class="box post post-excerpt">
+                <header>
+                    <h2>Welcome to Marvelous Mushrooms</h2>
+                    <p>Celebrating the hidden heroes of our forests, kitchens, and ecosystems.</p>
+                </header>
+                <img src="images/mushroom-banner.jpg" alt="Mushroom Banner" class="banner-image" />
+                <p>
+                    Mushrooms are far more than just curious fungi on the forest floor. They are essential 
+                    pillars of life on Earth, silently recycling nutrients, supporting plant growth, and maintaining 
+                    the balance of entire ecosystems. Without mushrooms and their fungal relatives, forests would 
+                    collapse under their own fallen leaves, dead trees, and organic matter. They are nature’s 
+                    recyclers, breaking down what once lived and transforming it into rich soil for future life. 
+                </p>
+                <p>
+                    For humans, mushrooms have long been underestimated. Beyond their earthy flavors and 
+                    remarkable textures, they provide powerful health benefits — boosting immunity, reducing 
+                    inflammation, and offering protein-rich, sustainable alternatives to meat. Many species have 
+                    been revered in traditional medicine for centuries, while modern science is only beginning to 
+                    uncover their potential in fighting disease and improving mental well-being. 
+                </p>
+                <p>
+                    Culinary explorers know mushrooms as one of the most versatile ingredients on the planet. 
+                    From delicate Oyster mushrooms that soak up the flavors of a dish, to hearty Chicken of the 
+                    Woods that mimics the taste of poultry, to the legendary Reishi revered as the “Mushroom of 
+                    Immortality” — each variety offers its own unique story, taste, and benefits. 
+                </p>
+                <p>
+                    In a world facing climate challenges and a growing demand for sustainable food, mushrooms 
+                    may be one of humanity’s most underrated allies. They remind us that even the quietest forms 
+                    of life can have the greatest impact. Dive in and discover just how marvelous mushrooms truly are.
+                </p>
+            </article>
+
+            <div class="mushroom-links">
+
+                <article class="box post mushroom-item">
+                    <div class="mushroom-flex">
+                        <a href="reishi.html" class="image featured">
+                            <img src="images/reishi.jpg" alt="Reishi" class="mushroom-card" />
+                        </a>
+                        <div class="mushroom-info">
+                            <header>
+                                <h2 class="mushroom-title"><a href="reishi.html">Reishi Mushroom</a></h2>
+                                <p>The Mushroom of Immortality</p>
+                            </header>
+                            <p>
+                                Reishi mushrooms have been used in traditional medicine for centuries. 
+                                Known for boosting the immune system and promoting relaxation, they’re often enjoyed as teas or extracts.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="box post mushroom-item">
+                    <div class="mushroom-flex">
+                        <a href="chicken.html" class="image featured">
+                            <img src="images/chicken.jpg" alt="Chicken of the Woods" class="mushroom-card" />
+                        </a>
+                        <div class="mushroom-info">
+                            <header>
+                                <h2 class="mushroom-title"><a href="chicken.html">Chicken of the Woods</a></h2>
+                                <p>The Forest’s Poultry Substitute</p>
+                            </header>
+                            <p>
+                                Chicken of the Woods is famous for its meaty texture and chicken-like flavor. 
+                                It’s a popular wild edible and adds a hearty touch to many vegetarian dishes.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="box post mushroom-item">
+                    <div class="mushroom-flex">
+                        <a href="oyster.html" class="image featured">
+                            <img src="images/oyster.jpg" alt="Oyster Mushroom" class="mushroom-card" />
+                        </a>
+                        <div class="mushroom-info">
+                            <header>
+                                <h2 class="mushroom-title"><a href="oyster.html">Oyster Mushroom</a></h2>
+                                <p>The Versatile Gourmet Delight</p>
+                            </header>
+                            <p>
+                                Oyster mushrooms grow in layered clusters and are beloved for their mild flavor and versatility. 
+                                They cook quickly, absorb sauces well, and are widely cultivated worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Burger toggle
+        function toggleMenu() {
+            const dropdown = document.getElementById('burgerDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close dropdown if clicking outside
+        document.addEventListener("click", function(e) {
+            const dropdown = document.getElementById('burgerDropdown');
+            const burger = document.querySelector('.burger-menu');
+            if (!burger.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Hover-grow effect for images and titles
+        document.addEventListener("DOMContentLoaded", function () {
+            const mushrooms = document.querySelectorAll(".mushroom-card");
+            mushrooms.forEach(img => {
+                img.addEventListener("mouseenter", () => {
+                    img.style.transform = "scale(1.1)";
+                });
+                img.addEventListener("mouseleave", () => {
+                    img.style.transform = "scale(1)";
+                });
+            });
+
+            const titles = document.querySelectorAll(".mushroom-title");
+            titles.forEach(title => {
+                title.addEventListener("mouseenter", () => {
+                    title.style.transform = "scale(1.1)";
+                });
+                title.addEventListener("mouseleave", () => {
+                    title.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+

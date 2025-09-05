@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Chicken of the Woods - Marvelous Mushrooms</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .mushroom-image {
+            width: 400px;
+            height: auto;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: block;
+        }
+        .id-guide {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .id-guide img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 12px;
+            width: 400px;
+        }
+
+        /* Burger menu - fixed and dark brown */
+        .burger-menu {
+            position: fixed; /* stays visible when scrolling */
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .burger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .burger-icon span {
+            display: block;
+            height: 4px;
+            background: #5C3A21; /* dark brown to match headings */
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .burger-dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: #5C3A21; /* dark brown */
+            border-radius: 12px;
+            box-shadow: 0px 6px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+            width: 220px;
+        }
+        .burger-dropdown a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff; /* white text on dark brown */
+            font-size: 16px;
+        }
+        .burger-dropdown a:hover {
+            background: #7B4F32; /* lighter brown on hover */
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Burger Menu -->
+    <div class="burger-menu">
+        <div class="burger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="burger-dropdown" id="burgerDropdown">
+            <a href="index.html">Home</a>
+            <a href="oyster.html">Oyster</a>
+            <a href="reishi.html">Reishi</a>
+            <a href="chicken.html">Chicken of the Woods</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="inner">
+
+            <article class="box post">
+                <header>
+                    <h2>Chicken of the Woods</h2>
+                    <p>The Forest’s Poultry Substitute</p>
+                </header>
+                <img src="images/chicken.jpg" alt="Chicken of the Woods Mushroom" class="mushroom-image" />
+                <p>
+                    Chicken of the Woods (<em>Laetiporus sulphureus</em>) is one of the most striking wild mushrooms. 
+                    Its bold orange and yellow shelves fan out from tree trunks, sometimes appearing in massive 
+                    clusters that weigh several kilograms. The sight of it is breathtaking, but what makes it 
+                    even more remarkable is its reputation as a meat substitute. When cooked, its firm, fibrous 
+                    texture and savory flavor resemble chicken so closely that it has earned its name from both 
+                    foragers and chefs.
+                </p>
+                <p>
+                    Culinary enthusiasts prize Chicken of the Woods as a versatile ingredient. It can be sautéed, 
+                    fried, grilled, or simmered in soups, where it soaks up flavors beautifully while maintaining 
+                    its hearty bite. For vegetarians or those looking to reduce meat consumption, this mushroom 
+                    provides a natural alternative that feels and tastes surprisingly familiar.
+                </p>
+                <p>
+                    In the forest, Chicken of the Woods plays a crucial ecological role. As a wood-decaying fungus, 
+                    it helps break down dead or weakened trees, enriching the soil and allowing new growth to 
+                    thrive. While delicious, caution is advised — it should always be thoroughly cooked, and 
+                    some individuals may be sensitive to it. Still, for many, this mushroom represents the 
+                    perfect intersection of culinary joy and ecological wonder.
+                </p>
+            </article>
+
+            <!-- Identification Guide -->
+            <section class="id-guide">
+                <h2>Identification Guide</h2>
+                <img src="images/chicken2.jpg" alt="Chicken of the Woods Identification">
+                <p>
+                    <strong>Chicken of the Woods</strong> is an easily identifiable mushroom due to its 
+                    vibrant yellow to deep orange coloring and large, overlapping, fan-shaped shelves. 
+                    The edges are often bright yellow when fresh, gradually fading with age. 
+                    This fungus grows primarily on hardwood trees such as oak, cherry, and beech, but may 
+                    also appear on some conifers — although those specimens are often avoided due to 
+                    potential digestive issues.
+                </p>
+                <p>
+                    The surface texture starts smooth and slightly velvety, becoming chalky or brittle 
+                    as it matures. When young, the flesh is soft and juicy, but older specimens tend 
+                    to be tougher and less palatable. The undersides lack gills and instead feature tiny 
+                    pores that release spores. Seasonally, Chicken of the Woods can appear from late 
+                    spring through early autumn, depending on climate.
+                </p>
+                <p>
+                    Always confirm your identification with multiple sources before consumption, as 
+                    misidentification can lead to health risks. Avoid specimens that are overly old, 
+                    growing on poisonous trees such as yew, or have an unpleasant odor. For the best 
+                    culinary experience, harvest young, tender clusters, and cook thoroughly to 
+                    neutralize any potential irritants.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // Burger toggle
+        function toggleMenu() {
+            const dropdown = document.getElementById('burgerDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close dropdown if clicking outside
+        document.addEventListener("click", function(e) {
+            const dropdown = document.getElementById('burgerDropdown');
+            const burger = document.querySelector('.burger-menu');
+            if (!burger.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Hover-grow effect (if needed for future images/titles)
+        document.addEventListener("DOMContentLoaded", function () {
+            const mushroomImages = document.querySelectorAll(".mushroom-image");
+            mushroomImages.forEach(img => {
+                img.style.transition = "transform 0.3s ease";
+                img.addEventListener("mouseenter", () => img.style.transform = "scale(1.05)");
+                img.addEventListener("mouseleave", () => img.style.transform = "scale(1)");
+            });
+        });
+    </script>
+
+</body>
+</html>
